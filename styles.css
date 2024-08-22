@@ -32,7 +32,6 @@ li:first-child {
     "dash head head head head"
     "dash main main main main"
     "dash . . . .";
-    grid-template-columns: 350px 4fr;
 }
 
 .header {
@@ -43,7 +42,28 @@ li:first-child {
     padding: 16px;
 }
 
+.searchbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 5fr 2fr 3fr;
+}
+
+.spacer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: space-between;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    justify-self: end;
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: -20px;
+}
+
 button {
+    grid-row: 3 / 4;
     border-radius: 30px;
     background-color: #08f;
     color: white;
@@ -76,8 +96,18 @@ input[type="search"] {
 }
 
 .small + p {
+    width: 100px;
+    margin-top: 12px;
     font-weight: bold;
     font-size: 18px;
+}
+
+.greet-user p {
+    font-weight: bold;
+}
+
+.user-name {
+    font-size: 24px;
 }
 
 .sidebar {
@@ -104,6 +134,8 @@ input[type="search"] {
 
 .title {
     grid-area: title;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .cards {
@@ -123,10 +155,22 @@ input[type="search"] {
 
 .announcements {
     grid-area: announce;
+    position: relative;
+}
+
+.announcements h3 {
+    position: absolute;
+    top: -25px;
 }
 
 .trending {
+    position: relative;
     grid-area: trending;
+}
+
+.trending h3 {
+    position: absolute;
+    top: -25px;
 }
 
 .announcement-card {
